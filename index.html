@@ -25,6 +25,17 @@
     </a-assets>
     <a-sound src="src: url(assets/sound/bird-whistling.wav)" autoplay="true" loop="true"></a-sound>
     <a-entity environment="preset: yavapai"></a-entity>
+    <a-entity light="type: spot; angle: 45; position: -3.579 4.465 0 "></a-entity>
+
+    <a-entity light="type: ambient; intensity: 0.5;"></a-entity>
+    <a-entity light="type: directional;
+                     castShadow: true;
+                     intensity: 0.4;
+                     shadowCameraVisible: true;"
+              position="-5 3 1.5"></a-entity>
+              
+
+              
 
     <a-gltf-model src="#timon" scale="0.015 0.015 0.015" position="2.366 5.160 -9.738" animation-mixer></a-gltf-model>
     <a-gltf-model src="#pumba" scale="0.250 0.250 0.250" position="2.023 3.397 -8.167" rotation="0 180.00 0" animation-mixer></a-gltf-model>

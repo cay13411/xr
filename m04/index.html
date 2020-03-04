@@ -1,0 +1,47 @@
+<html>
+
+<head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+        <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://rawgit.com/feiss/aframe-environment-component/master/dist/aframe-environment-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-entity-generator-component@3.0.2/dist/aframe-entity-generator-component.min.js"></script>
+        <script src="https://unpkg.com/aframe-randomizer-components@3.0.2/dist/aframe-randomizer-components.min.js"></script>
+    
+</head>
+
+<body>
+    <a-scene physics="gravity: -2">
+
+        <a-assets>
+            <a-asset-item id="person-obj" src="assets/models/lego.obj"></a-asset-item>
+        </a-asset-item>
+
+        <!-- <a-mixin id="box" geometry="primitive: box; radius: 1"></a-mixin> -->
+        <a-mixin id="model" obj-model="obj: #person-obj" scale="0.15 0.15 0.15"></a-mixin>
+
+        <a-mixin id="random-1" random-position="min: -10 -10 -10; max: 10 10 10" random-color dynamic-body="linearDamping:0.50 angularDamping:0.50" ></a-mixin>
+
+      </a-asset-item>
+    </a-assets>
+
+    <a-entity camera look-controls wasd-controls="acceleration:200 easing:10" position="0 1 -1">
+        <a-entity cursor="fuse: true; fuseTimeout: 500"
+        position="0 0 -1"
+        geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+        material="color: black; shader: flat">
+        </a-entity>
+    </a-entity>
+      
+
+
+    <a-entity entity-generator="mixin: random-1 model; num: 100"></a-entity>
+
+    <a-box static-body id="ground" width=1000 height=0.001 depth=1000 visible="true" color="#F8DE7E"></a-box>
+    
+    <a-entity laser-controls="hand: left "></a-entity>
+    <a-entity laser-controls="hand: right "></a-entity>
+    
+    
+
+    </a-scene>
+</body>
