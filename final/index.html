@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <title>Welcome to LEGO World!</title>
+    <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-environment-component/dist/aframe-environment-component.min.js"></script>
+    <script src="//cdn.rawgit.com/donmccurdy/aframe-physics-system/v4.0.1/dist/aframe-physics-system.min.js"></script>
+    <script src="script.js"></script>
+    <!-- A-Frame extras for GLTF animations -->
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="https://rawgit.com/msj121/aframeFrogShaders/master/aframe-shader-frog.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/donmccurdy/aframe-extras@v6.0.1/dist/aframe-extras.min.js"></script>
+    <script src="js/aframe-environment-component.js"></script>
+  </head>
+  <body>
+    <a-scene>
+        <a-box src="assets/img/yellow-texture.jpg" position="0 3 -10" rotation="45 45 0" scale="2 2 2" animation="property: object3D.position.y; to: 4.0; dir: alternate; dur: 2000; loop: true; easing: easeInSine" event-set__enter="_event: mouseenter;" animation__scaleup="property: scale; from:1 1 1; to: 2 2 2; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseenter;"
+        animation__scaleout="property: scale; from:2 2 2; to: 1 1 1; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseleave;"></a-box>
+        <a-box src="assets/img/blue-texture.png" position="4 3 -10" rotation="0 45 0" scale="2 2 2" animation="property: object3D.position.y; to: 2.5; dir: alternate; dur: 2000; loop: true; easing: easeInSine" event-set__enter="_event:
+        mouseenter;" animation__scaleup="property: scale; from:1 1 1; to: 2 2 2; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseenter;"
+        animation__scaleout="property: scale; from:2 2 2; to: 1 1 1; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseleave;"></a-box>
+        <a-box src="assets/img/red-texture.jpg" position="-4 3 -10" rotation="0 45 0" scale="2 2 2" animation="property: object3D.position.y; to: 2.5; dir: alternate; dur: 2000; loop: true; easing: easeInSine" event-set__enter="_event: mouseenter;"             animation__scaleup="property: scale; from:1 1 1; to: 2 2 2; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseenter;"
+        animation__scaleout="property: scale; from:2 2 2; to: 1 1 1; loop: false; dur: 1000; easing: easeInSine; startEvents: mouseleave;"></a-box>
+        
+        <!-- <a-asset-item id="person-obj" src="assets/assets/models/lego.obj"></a-asset-item> -->
+        <a-asset-item id="lego_button_one" src="assets/models/high_poly_lego/scene.gltf" position="0 -1 0"></a-asset-item>
+        <a-asset-item id="lego_button_two" src="assets/models/high_poly_lego/scene.gltf" position="0 -1 0"></a-asset-item>
+        <a-asset-item id="lego_button_three" src="assets/models/high_poly_lego/scene.gltf" position="0 -1 0"></a-asset-item>
+        <a-asset-item id="lego_brick" src="assets/models/lego.obj" position="5 -1 0"></a-asset-item>
+        <!-- <a-asset-item id="lego_man" src="assets/models/lego_man_walking/scene.gltf" position="0 -3 -" animation-mixer></a-asset-item> -->
+        <!-- <a-asset-item id="the_lego_city" src="assets/models/the_lego_city_vr.obj" position="0 -5 -15"></a-asset-item> -->
+        <a-asset-item id="lego_figure" src="assets/models/lego_figure/scene.gltf" position="0 -1 -15"></a-asset-item>
+        <a-asset-item id="lego_house" src="assets/models/lego_house/scene.gltf" position="0 -10 -15"></a-asset-item>
+        <a-asset-item id="lego_fireman" src="assets/models/lego_fireman/scene.gltf" position="0 -5 -15"></a-asset-item>
+        <a-asset-item id="lego_sports_car" src="assets/models/lego_sports_car/scene.gltf" position="0 -5 -15"></a-asset-item>
+        <!-- <a-asset-item id="lego_vliegtuig" src="assets/models/lego_vliegtuig.gltf" position="0 -5 -15"></a-asset-item> -->
+        <!-- <a-mixin id="model" obj-model="obj: #person-obj" scale="0.15 0.15 0.15"></a-mixin>
+        <a-mixin id="random-1" random-position="min: -10 -10 -10; max: 10 10 10" random-color dynamic-body="linearDamping:0.50 angularDamping:0.50" ></a-mixin> -->
+      <!-- import sound with the audio tag -->
+      <audio id="intro" crossorigin="anonymous" preload="auto" src="assets/sounds/happy-sandbox.mp3"></audio>
+
+      </a-asset> 
+
+      <!-- <a-entity entity-generator="mixin: random-1 model; num: 50"></a-entity> -->
+
+      <a-sphere scale=".8 .8 .8" position="0 20 -.5" radius="5" color="yellow" animation__rotation="property: rotation; dir: alternate; dur: 10000;
+      easing: easeInSine; loop: true; to: 0 360 0" animation__position="property: position; dir: alternate; dur: 10000;
+      easing: easeInSine; loop: true; from: 15 15 0; to: 15 15 -40" animation__segmentw="property: segments-width; dir: alternate; dur: 1000;
+      easing: easeInSine; loop: true; from: 2; to: 36" animation__segmenth="property: segments-height; dir: alternate; dur: 1000;
+      easing: easeInSine; loop: true; from: 2; to: 18">
+      </a-sphere>
+
+
+      <a-gltf-model src="#lego_button_one" scale="0.005 0.005 0.005 " position="-2.960 0.500 -5.097"></a-gltf-model>
+      <a-gltf-model src="#lego_button_two" scale="0.005 0.005 0.005 " position="0.098 0.500 -5.097"></a-gltf-model>
+      <a-gltf-model src="#lego_button_three" scale="0.005 0.005 0.005 " position="3.149 0.500 -5.097"></a-gltf-model>
+      
+      <!-- <a-gltf-model src="#the_lego_city" rotation="0 42.264 0" scale="0.070 0.070 0.070 " position="-3.524 2.579 -6.219"></a-gltf-model> -->
+      <a-obj-model src="#lego_brick" position="-5.524 2.579 -6.219"></a-obj-model>
+      <a-gltf-model src="#lego_figure" rotation="0 42.264 0" scale="0.670 0.670 0.670 " position="-7.524 2.579 -6.219"></a-gltf-model>
+      <a-gltf-model src="#lego_house" rotation="0 90 0" scale="50.323 50.323 50.323 " position="-17.411 0.188 7.289"></a-gltf-model>
+      <a-gltf-model src="#lego_man" rotation="0 90 0" scale="5.323 5.323 5.323 " position="-17.411 2.188 7.289"></a-gltf-model>
+      <a-gltf-model src="#lego_fireman" rotation="0 139.642 0" scale="0.050 0.050 0.050 " position="2.661 0 7.289"></a-gltf-model>
+      <a-gltf-model src="#lego_sports_car" rotation="0 139.642 0" scale="0.030 0.030 0.030 " position="10.451 0.000 7.289"></a-gltf-model>
+      
+      <!-- Out of the box environment! -->
+        <a-entity environment="preset: tron; dressingAmount: 150; dressingColor: #396A78; groundColor: #FCFAF1; grid:'none'; skyType: color; skyColor: #FBD04F;"></a-entity> 
+        
+        <a-entity text="value: Welcome to LEGO World; color: black" position="5 8 -10" scale="20 20 20"></a-entity>
+        <!-- <a-entity text="value: Dump; color: black" position="2.5 .5 -10" scale="15 15 15"></a-entity>
+        <a-entity text="value: City; color: black" position="7 .5 -10" scale="15 15 15"></a-entity>
+        <a-entity text="value: Transform; color: black" position="10 .5 -10" scale="15 15 15"></a-entity> -->
+
+      <!-- sound is positional by default set it to false to fill the scene -->
+      <a-sound src="#intro" autoplay="true" loop="true" volume="1" positional="false"></a-sound>
+
+        
+      <a-entity camera look-controls wasd-controls>
+        <a-entity cursor="fuse: true; fuseTimeout: 500"
+                  position="0 0 -1"
+                  geometry="primitive: ring; radiusInner: 0.02; radiusOuter: 0.03"
+                  material="color: black; shader: flat">
+        </a-entity>
+      </a-entity>
+
+        <a-camera position="0 2.5 0">
+            <a-cursor color="#FF7F41"></a-cursor>
+        </a-camera>
+
+
+    </a-scene>
+  </body>
+</html>
